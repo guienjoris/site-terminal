@@ -8,19 +8,17 @@ const Input = styled.input`
   background-color: transparent;
   caret-color: white;
   caret-shape:underscore;
-  border: 1px solid white;
-  box-shadow: 0px 0px 10px white;
+  
+  border:none;
   color:white;
   font-family: Orbitron, sans-serif;
   font-size: 50px;
   text-shadow: 1px 1px 10px white;
+  text-align:center;
   outline:none;
-  &:focus{
-    border:none;
-    box-shadow: 0px 0px 10px black;
-  }
-  height:80px;
-  width:50%;
+  height:100vh;
+  width:100%;
+  overflow:hidden;
 `
 const Title = styled.h1`
   color:white;
