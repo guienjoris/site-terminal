@@ -1,15 +1,18 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
-import styled from 'styled-components';
+import styled, {keyframes} from 'styled-components';
 import React, { useEffect, useRef, useState } from "react";
 
 
 const Input = styled.input`
   background-color: transparent;
-  caret-color: white;
+  caret-color: transparent;
   caret-shape:underscore;
-  
-  border:none;
+  background-image: url(caret.png);
+  background-repeat:no-repeat;
+  background-position: ${props => props.caretPosition};
+  border-style:none;
+  border-color:transparent;
   color:white;
   font-family: Orbitron, sans-serif;
   font-size: 50px;
@@ -18,8 +21,8 @@ const Input = styled.input`
   outline:none;
   height:100vh;
   width:100%;
-  overflow:hidden;
 `
+
 const Title = styled.h1`
   color:white;
   position:absolute;
@@ -35,18 +38,42 @@ const Signature = styled.a`
   position:absolute;
   bottom:10px;
 `
-const handleKeyUp = e=>{
-  console.log(e.currentTarget.value)
-  if (e.key === "Enter" && !e.shiftKey) {
-    console.log("vous avez appuyé sur enter")
-  }
-}
+
+
 export default function Home() {
+  const [widthState, setWidthState]= useState("49vw")
+
   const searchInput = useRef(null);
 useEffect(()=>{
   searchInput.current.focus();
   console.log(searchInput);
 },[]) 
+const handleKeyUp = e=>{
+  console.log(e.currentTarget.value.length)
+  let lengthInput;
+  if(e.currentTarget.value.length <=1 ){
+    lengthInput = 50 + e.currentTarget.value.length
+  }
+  if(e.currentTarget.value.length>1 && e.currentTarget.value.length <= 5 ){
+    lengthInput = 51 + e.currentTarget.value.length
+  }
+  if(e.currentTarget.value.length>5 && e.currentTarget.value.length <= 10 ){
+    lengthInput = 53 + e.currentTarget.value.length
+  }
+  if(e.currentTarget.value.length>10 && e.currentTarget.value.length <= 15 ){
+    lengthInput = 55 + e.currentTarget.value.length
+  }
+  if(e.currentTarget.value.length>15 ){
+    lengthInput = 57 + e.currentTarget.value.length
+  }
+  let lengthInputString = `${lengthInput}vw 50%`;
+  setWidthState(lengthInputString)
+  console.log(widthState)
+  
+  if (e.key === "Enter" && !e.shiftKey) {
+    console.log("vous avez appuyé sur enter")
+  }
+}
   return (
     <div className={styles.container}>
       <Head>
@@ -55,7 +82,7 @@ useEffect(()=>{
         <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"></link>
       </Head>
       <Title>Terminal Site</Title>
-      <Input ref={searchInput} onKeyUp={handleKeyUp}></Input>
+      <Input ref={searchInput} onKeyUp={handleKeyUp} caretPosition= {widthState}></Input>
       <Signature href="https://github.com/guienjoris" target="_blank" >Shynryu</Signature>
     </div>
   )
