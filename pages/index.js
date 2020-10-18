@@ -3,12 +3,20 @@ import styles from '../styles/Home.module.css'
 import styled, {keyframes} from 'styled-components';
 import React, { useEffect, useRef, useState } from "react";
 
+const blink = keyframes`
+  from {
+    background-image: none;
+  }
 
+  to {
+    background-image: url(caret.png);
+  }
+`;
 const Input = styled.input`
   background-color: transparent;
   caret-color: transparent;
   caret-shape:underscore;
-  background-image: url(caret.png);
+  animation: ${blink} 1s linear infinite;
   background-repeat:no-repeat;
   background-position: ${props => props.caretPosition};
   border-style:none;
@@ -50,24 +58,7 @@ useEffect(()=>{
 },[]) 
 const handleKeyUp = e=>{
   console.log(e.currentTarget.value.length)
-  let lengthInput;
-  if(e.currentTarget.value.length <=1 ){
-    lengthInput = 50 + e.currentTarget.value.length
-  }
-  if(e.currentTarget.value.length>1 && e.currentTarget.value.length <= 5 ){
-    lengthInput = 51 + e.currentTarget.value.length
-  }
-  if(e.currentTarget.value.length>5 && e.currentTarget.value.length <= 10 ){
-    lengthInput = 53 + e.currentTarget.value.length
-  }
-  if(e.currentTarget.value.length>10 && e.currentTarget.value.length <= 15 ){
-    lengthInput = 55 + e.currentTarget.value.length
-  }
-  if(e.currentTarget.value.length>15 ){
-    lengthInput = 57 + e.currentTarget.value.length
-  }
-  let lengthInputString = `${lengthInput}vw 50%`;
-  setWidthState(lengthInputString)
+  setWidthState(`${49 + e.currentTarget.value.length}vw 50%`)
   console.log(widthState)
   
   if (e.key === "Enter" && !e.shiftKey) {
