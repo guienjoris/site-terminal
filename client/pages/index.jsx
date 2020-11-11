@@ -27,12 +27,9 @@ export default function Home() {
       <Head>
         <title>Terminal site</title>
         <link rel="icon" href="/favicon.ico" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap"
-          rel="stylesheet"
-        ></link>
+        
       </Head>
-      <Title>Terminal Site</Title>
+      <Title href="/">Terminal Site</Title>
       <Input
         ref={searchInput}
         onKeyUp={handleKeyUp}

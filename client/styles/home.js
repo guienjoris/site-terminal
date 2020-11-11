@@ -20,7 +20,7 @@ export const Input = styled.input`
   border-style:none;
   border-color:transparent;
   color:white;
-  font-family: Orbitron, sans-serif;
+  font-family: Orbitron , sans-serif;
   font-size: 50px;
   text-shadow: 1px 1px 10px white;
   text-align:center;
@@ -29,17 +29,13 @@ export const Input = styled.input`
   width:100%;
 `
 
- export const Title = styled.h1`
-  color:white;
+ export const Title = styled.a`
   position:absolute;
   top:0;
-  font-family: Orbitron, sans-serif;
   text-shadow: 1px 1px 10px white;
   font-size: 100px;
 `
 export const Signature = styled.a`
-  font-family: Orbitron, sans-serif;
-  color:white;
   text-shadow: 1px 1px 10px white;
   position:absolute;
   bottom:10px;
