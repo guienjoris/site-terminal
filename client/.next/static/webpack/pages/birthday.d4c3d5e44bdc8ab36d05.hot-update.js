@@ -13,16 +13,25 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/asyncToGenerator */ "./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _babel_runtime_helpers_esm_readOnlyError__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/esm/readOnlyError */ "./node_modules/@babel/runtime/helpers/esm/readOnlyError.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_4__);
 
 
-var _jsxFileName = "C:\\Users\\user\\Projets\\Perso\\site-terminal\\client\\pages\\birthday.jsx";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
 
 
+var _jsxFileName = "C:\\Users\\user\\Projets\\Perso\\site-terminal\\client\\pages\\birthday.jsx",
+    _s = $RefreshSig$();
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement;
+
+
+
+var _useState = Object(react__WEBPACK_IMPORTED_MODULE_3__["useState"])({}),
+    birthdayState = _useState[0],
+    setBirthdayState = _useState[1];
 
 var getBirthday = /*#__PURE__*/function () {
   var _ref = Object(_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__["default"])( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
@@ -34,12 +43,14 @@ var getBirthday = /*#__PURE__*/function () {
           case 0:
             _context.prev = 0;
             _context.next = 3;
-            return axios__WEBPACK_IMPORTED_MODULE_3___default.a.get("".concat(process.env.URL_SERVER, "/api/getBirthday"));
+            return axios__WEBPACK_IMPORTED_MODULE_4___default.a.get("".concat(process.env.URL_SERVER, "/api/getBirthday"));
 
           case 3:
             _yield$axios$get = _context.sent;
             data = _yield$axios$get.data;
-            return _context.abrupt("return", data.data);
+            setBirthdayState = (Object(_babel_runtime_helpers_esm_readOnlyError__WEBPACK_IMPORTED_MODULE_2__["default"])("setBirthdayState"), data.data);
+            _context.next = 11;
+            break;
 
           case 8:
             _context.prev = 8;
@@ -60,18 +71,23 @@ var getBirthday = /*#__PURE__*/function () {
 }();
 
 function Birthday() {
-  console.log(process.env.URL_SERVER);
-  var data = getBirthday;
-  console.log(data);
+  _s();
+
+  useEffect(function () {
+    console.log(birthdayState);
+  }, [birthdayState]);
   return __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19,
+      lineNumber: 21,
       columnNumber: 9
     }
   }, "Birthday");
 }
+
+_s(Birthday, "OD7bBpZva5O2jO+Puf00hKivP7c=");
+
 _c = Birthday;
 
 var _c;
@@ -138,4 +154,4 @@ $RefreshReg$(_c, "Birthday");
 /***/ })
 
 })
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9fTl9FLy4vcGFnZXMvYmlydGhkYXkuanN4Il0sIm5hbWVzIjpbImdldEJpcnRoZGF5IiwiYXhpb3MiLCJnZXQiLCJwcm9jZXNzIiwiZW52IiwiVVJMX1NFUlZFUiIsImRhdGEiLCJjb25zb2xlIiwibG9nIiwiQmlydGhkYXkiXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O0FBQUE7QUFDQTs7QUFFQSxJQUFNQSxXQUFXO0FBQUEsOExBQUc7QUFBQTs7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQSxtQkFHR0MsNENBQUssQ0FBQ0MsR0FBTixXQUFhQyxPQUFPLENBQUNDLEdBQVIsQ0FBWUMsVUFBekIsc0JBSEg7O0FBQUE7QUFBQTtBQUdWQyxnQkFIVSxvQkFHVkEsSUFIVTtBQUFBLDZDQUlUQSxJQUFJLENBQUNBLElBSkk7O0FBQUE7QUFBQTtBQUFBO0FBTWZDLG1CQUFPLENBQUNDLEdBQVI7O0FBTmU7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUEsR0FBSDs7QUFBQSxrQkFBWFIsV0FBVztBQUFBO0FBQUE7QUFBQSxHQUFqQjs7QUFTZSxTQUFTUyxRQUFULEdBQW9CO0FBQy9CRixTQUFPLENBQUNDLEdBQVIsQ0FBWUwsT0FBTyxDQUFDQyxHQUFSLENBQVlDLFVBQXhCO0FBRUEsTUFBTUMsSUFBSSxHQUFHTixXQUFiO0FBQ0FPLFNBQU8sQ0FBQ0MsR0FBUixDQUFZRixJQUFaO0FBQ0EsU0FDSTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBLGdCQURKO0FBR0g7S0FSdUJHLFEiLCJmaWxlIjoic3RhdGljL3dlYnBhY2svcGFnZXMvYmlydGhkYXkuNzY3MTg1OWZiYWUxYWVmM2E3NTAuaG90LXVwZGF0ZS5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBSZWFjdCBmcm9tIFwicmVhY3RcIjtcclxuaW1wb3J0IGF4aW9zIGZyb20gJ2F4aW9zJztcclxuXHJcbmNvbnN0IGdldEJpcnRoZGF5ID0gYXN5bmMgKCk9PntcclxuXHJcbiB0cnkge1xyXG4gICAgY29uc3R7ZGF0YX0gPWF3YWl0IGF4aW9zLmdldChgJHtwcm9jZXNzLmVudi5VUkxfU0VSVkVSfS9hcGkvZ2V0QmlydGhkYXlgKTtcclxuICAgIHJldHVybiBkYXRhLmRhdGFcclxuIH0gY2F0Y2ggKGVycm9yKSB7XHJcbiAgICAgY29uc29sZS5sb2coZXJyb3IpXHJcbiB9XHJcbn0gXHJcbmV4cG9ydCBkZWZhdWx0IGZ1bmN0aW9uIEJpcnRoZGF5KCkge1xyXG4gICAgY29uc29sZS5sb2cocHJvY2Vzcy5lbnYuVVJMX1NFUlZFUik7XHJcblxyXG4gICAgY29uc3QgZGF0YSA9IGdldEJpcnRoZGF5O1xyXG4gICAgY29uc29sZS5sb2coZGF0YSk7XHJcbiAgICByZXR1cm4oXHJcbiAgICAgICAgPGRpdj5CaXJ0aGRheTwvZGl2PlxyXG4gICAgKVxyXG59Il0sInNvdXJjZVJvb3QiOiIifQ==
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9fTl9FLy4vcGFnZXMvYmlydGhkYXkuanN4Il0sIm5hbWVzIjpbInVzZVN0YXRlIiwiYmlydGhkYXlTdGF0ZSIsInNldEJpcnRoZGF5U3RhdGUiLCJnZXRCaXJ0aGRheSIsImF4aW9zIiwiZ2V0IiwicHJvY2VzcyIsImVudiIsIlVSTF9TRVJWRVIiLCJkYXRhIiwiY29uc29sZSIsImxvZyIsIkJpcnRoZGF5IiwidXNlRWZmZWN0Il0sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O0FBQUE7QUFDQTs7Z0JBRTJDQSxzREFBUSxDQUFDLEVBQUQsQztJQUE1Q0MsYTtJQUFnQkMsZ0I7O0FBQ3ZCLElBQU1DLFdBQVc7QUFBQSw4TEFBRztBQUFBOztBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBLG1CQUdHQyw0Q0FBSyxDQUFDQyxHQUFOLFdBQWFDLE9BQU8sQ0FBQ0MsR0FBUixDQUFZQyxVQUF6QixzQkFISDs7QUFBQTtBQUFBO0FBR1ZDLGdCQUhVLG9CQUdWQSxJQUhVO0FBSWhCUCw0QkFBZ0Isa0hBQUdPLElBQUksQ0FBQ0EsSUFBUixDQUFoQjtBQUpnQjtBQUFBOztBQUFBO0FBQUE7QUFBQTtBQU1mQyxtQkFBTyxDQUFDQyxHQUFSOztBQU5lO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBLEdBQUg7O0FBQUEsa0JBQVhSLFdBQVc7QUFBQTtBQUFBO0FBQUEsR0FBakI7O0FBVWUsU0FBU1MsUUFBVCxHQUFvQjtBQUFBOztBQUUvQkMsV0FBUyxDQUFDLFlBQU07QUFDWkgsV0FBTyxDQUFDQyxHQUFSLENBQVlWLGFBQVo7QUFDSCxHQUZRLEVBRU4sQ0FBQ0EsYUFBRCxDQUZNLENBQVQ7QUFHQSxTQUNJO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUEsZ0JBREo7QUFHSDs7R0FSdUJXLFE7O0tBQUFBLFEiLCJmaWxlIjoic3RhdGljL3dlYnBhY2svcGFnZXMvYmlydGhkYXkuZDRjM2Q1ZTQ0YmRjOGFiMzZkMDUuaG90LXVwZGF0ZS5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBSZWFjdCwgeyB1c2VTdGF0ZSB9IGZyb20gXCJyZWFjdFwiO1xyXG5pbXBvcnQgYXhpb3MgZnJvbSAnYXhpb3MnO1xyXG5cclxuY29uc3QgW2JpcnRoZGF5U3RhdGUgLCBzZXRCaXJ0aGRheVN0YXRlXSA9IHVzZVN0YXRlKHt9KVxyXG5jb25zdCBnZXRCaXJ0aGRheSA9IGFzeW5jICgpPT57XHJcblxyXG4gdHJ5IHtcclxuICAgIGNvbnN0e2RhdGF9ID1hd2FpdCBheGlvcy5nZXQoYCR7cHJvY2Vzcy5lbnYuVVJMX1NFUlZFUn0vYXBpL2dldEJpcnRoZGF5YCk7XHJcbiAgICBzZXRCaXJ0aGRheVN0YXRlID0gZGF0YS5kYXRhXHJcbiB9IGNhdGNoIChlcnJvcikge1xyXG4gICAgIGNvbnNvbGUubG9nKGVycm9yKVxyXG4gfVxyXG59IFxyXG5cclxuZXhwb3J0IGRlZmF1bHQgZnVuY3Rpb24gQmlydGhkYXkoKSB7XHJcblxyXG4gICAgdXNlRWZmZWN0KCgpID0+IHtcclxuICAgICAgICBjb25zb2xlLmxvZyhiaXJ0aGRheVN0YXRlKTtcclxuICAgIH0sIFtiaXJ0aGRheVN0YXRlXSlcclxuICAgIHJldHVybihcclxuICAgICAgICA8ZGl2PkJpcnRoZGF5PC9kaXY+XHJcbiAgICApXHJcbn0iXSwic291cmNlUm9vdCI6IiJ9

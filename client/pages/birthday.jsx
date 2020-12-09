@@ -1,19 +1,23 @@
-import React from "react";
+import React, { useState , useEffect } from "react";
 import axios from 'axios';
 
-const getBirthday = async ()=>{
 
- try {
-    const{data} =await axios.get(`${process.env.URL_SERVER}/api/getBirthday`);
-    return data.data
- } catch (error) {
-     console.log(error)
- }
-} 
+
 export default function Birthday() {
+    const [birthdayState , setBirthdayState] = useState({})
 
-    console.log(getBirthday);
-
+    useEffect(() => {
+        console.log(birthdayState);
+        try {
+            const newLocal = `${process.env.URL_SERVER}/api/getBirthday`;
+            console.log(newLocal)
+            const{data} = axios.get(`${process.env.URL_SERVER}/api/getBirthday`);
+            setBirthdayState = data.data
+            return(birthdayState)
+         } catch (error) {
+             console.log(error)
+         }
+    }, [])
     return(
         <div>Birthday</div>
     )
